@@ -1,0 +1,35 @@
+@mixin shape($w, $h, $bg-color) {
+  width: $w;
+  height: $h;
+  background-color: $bg-color;
+}
+
+#square {
+  @include shape(50px, 50px, red);
+}
+
+#rect-a {
+  @include shape(100px, 50px, blue);
+}
+
+#rect-b {
+  @include shape(50px, 100px, orange);
+}
+
+@mixin border-stroke($cek){
+  @if $cek == ringan{
+    border: 1px solid black;
+  }
+  @else if $cek == standar{
+    border: 3px solid black;
+  }
+ @else if $cek == berat{
+  border: 10px solid black;
+  }
+}
+ #box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(standar);
+  }
